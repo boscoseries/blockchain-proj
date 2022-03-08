@@ -36,11 +36,50 @@ contract Learning {
     }
 
     // Mapping
-
     address user = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
     mapping(address => uint) public balances;
 
-    function checkBalance() public {
+    function getBalance() public {
         balances[user] = 20;
     }
+
+
+
+    // Functions and Constructors
+    address public owner;
+
+    // gets called when contract is deployed. called only once
+    // owner is the account that deployed the contract
+
+    // constructor must payable if we intend to send value to an any of it functions. 
+    // value is sent to the checkBalance function. The value is sent to the address "this"
+    constructor() payable {
+        owner = msg.sender;
+    }
+
+    function changeOwner(address newOwner) public {
+        require(msg.sender == owner, "Only the owner can change the owner!!!");
+        owner = newOwner;
+    }
+
+    // "view" function tell the solidity that the function does not not modify state. It is readOnly
+    // Note that whenever you return from a function, you must define a return type
+    function checkBalance() public view returns(uint256) {
+        return(address(this).balance);
+    }
+
+    // Another view function
+    function getNumber () public view returns(uint256) {
+        return number;
+    }
+
+    // pure function
+    // A pure function neither changes the state of the etherium netwowk nor makes a call to the state
+    function doMaths() public pure returns(uint256) {
+        returns 1+1;
+    }
+
+    // NB: calling a view or pure function fromwithin a smart contract costs lower gas
+
+
 }

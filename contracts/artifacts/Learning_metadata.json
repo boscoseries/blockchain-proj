@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -25,8 +30,34 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "checkBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -60,6 +91,19 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -90,11 +134,11 @@
 	},
 	"sources": {
 		"contracts/Learning.sol": {
-			"keccak256": "0x018a41bb187230d50c1730457f31ec6d4a8dcd227b7d967033f6a91f523e124d",
+			"keccak256": "0x4d4ba16ffcac9aadc814a8779161f399359312ffb75f638df55e7ff269497182",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d462450656a7aaf089571fb000a240e3d45e289bdcce7ef1ccacde548c87281c",
-				"dweb:/ipfs/QmfSLVUhLkCUjqb2qf9GHmwWb5wnMJVfZpdggxKukuhETT"
+				"bzz-raw://06d84f320b2738cc4b08290c31b7d33a6bc0efa15834af95aff882043e19e0a8",
+				"dweb:/ipfs/QmPnNHJhcLbCjf55RfEU371H9eVzKWK5KERhXLSSGBon5y"
 			]
 		}
 	},
